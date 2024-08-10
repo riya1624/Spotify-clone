@@ -32,14 +32,14 @@ updateSongBanner();
 const playPauseSong = (element, index) => {
     
     if (songIndex === index && !audioElement.paused) {
-        // Pause the song if it's already playing
+        
         audioElement.pause();
         element.classList.remove('fa-circle-pause');
         element.classList.add('fa-circle-play');
         masterPlay.classList.remove('fa-pause');
         masterPlay.classList.add('fa-play');
     } else {
-        // Play the selected song
+        
         makeAllPlays();
         songIndex = index;
         audioElement.src = songs[songIndex].filePath;
@@ -68,15 +68,11 @@ masterPlay.addEventListener('click', () => {
         document.getElementById(songIndex).classList.remove('fa-circle-pause');
     }
 });
-
-// Handle play/pause click on individual song items
 Array.from(document.getElementsByClassName('songItemPlay')).forEach((element, index) => {
     element.addEventListener('click', (e) => {
         playPauseSong(e.target, index);
     });
 });
-
-// Handle next button click
 document.getElementById('next').addEventListener('click', () => {
     if (songIndex >= songs.length - 1) {
         songIndex = 0;
@@ -94,7 +90,7 @@ document.getElementById('next').addEventListener('click', () => {
     document.getElementById(songIndex).classList.add('fa-circle-pause'); // Set current song button to pause
 });
 
-// Handle previous button click
+
 document.getElementById('previous').addEventListener('click', () => {
     if (songIndex <= 0) {
         songIndex = 0;
@@ -112,7 +108,7 @@ document.getElementById('previous').addEventListener('click', () => {
     document.getElementById(songIndex).classList.add('fa-circle-pause'); // Set current song button to pause
 });
 
-// Function to reset all play buttons to play icon
+
 const makeAllPlays = () => {
     Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) => {
         element.classList.add('fa-circle-play');
