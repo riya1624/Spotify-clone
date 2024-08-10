@@ -171,7 +171,7 @@ align-items: center;
 /* Media Query for Mobile Devices */
 @media (max-width: 480px) {
     nav ul {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
     }
 
@@ -183,7 +183,7 @@ align-items: center;
     .songItem {
         font-size: 14px;
         height: auto;
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
     }
 
